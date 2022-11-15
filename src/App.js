@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import MenuMakanan from "./components/MenuMakanan/MenuMakanan";
+import MenuMinuman from './components/MenuMinuman/MenuMinuman';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      namaResto: "Codepolitan",
+    }
+  }
+
+  handleGantiNama = (resto) => {
+    this.setState ({namaResto: resto})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Cafe and Resto {this.state.namaResto}</h1>
+        <button onClick={() => this.handleGantiNama("Gaming")}>Ganti Nama Resto</button>
+        <h2>Menu Makanan</h2>
+        <MenuMakanan />
+        <MenuMakanan />
+
+        <h2>Menu Minuman</h2>
+        <MenuMinuman />
+        <MenuMinuman />
+      </div>
+    );
+  }
 }
 
 export default App;
