@@ -18,9 +18,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <h1>Cafe and Resto {this.state.namaResto}</h1>
-        <button onClick={() => this.handleGantiNama("Gaming")}>Ganti Nama Resto</button>
+        <button className='btn btn-primary' onClick={() => this.handleGantiNama("Gaming")}>Ganti Nama Resto</button>
         <h2>Menu Makanan</h2>
         <MenuMakanan />
         <MenuMakanan />
